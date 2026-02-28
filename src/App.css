@@ -81,23 +81,59 @@ input:focus {
     filter: brightness(1.1);
 }
 
-.popular{
+section{
   width: 80%;
   color: var(--text-color);
-  margin: 20px auto 0;
+  margin: 20px auto 20px;
 }
 
-.popular-container{
+.slider-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.popular-container, .recent-container, .random-container{
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; 
+  overflow-x: hidden; 
+  scroll-behavior: smooth; 
+  gap: 20px; 
+  padding: 10px 0;
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: var(--text-color);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s;
+}
+
+.nav-btn:hover {
+  background: var(--sub-color);
+}
+
+.prev { left: -50px; }
+.next { right: -50px; }
+
+.card {
+  flex: 0 0 auto; 
+  margin-top: 0;
 }
 
 .card {
   margin-top: 20px;
-  height: 300px;
-  width: 250px;
+  height: 324px;
+  width: 225px;
   border-radius: 20px;
   position: relative; 
   overflow: hidden; 
@@ -114,8 +150,8 @@ input:focus {
   top: 0; left: 0; right: 0; bottom: 0;
   background-image: 
     linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
-    url("https://cdn.myanimelist.net/images/anime/1405/149053.jpg");
-  background-size: cover;
+    var(--bg-image);
+  background-size: contain;
   background-position: center;
   transition: transform 0.5s ease, filter 0.5s ease;
   z-index: 1;

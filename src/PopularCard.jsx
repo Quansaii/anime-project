@@ -1,10 +1,10 @@
-export function PopularCard({imageLink}){
+export function PopularCard({imageLink, title, synopsis}){
+    console.log(imageLink)
     return(
         <>
-            <div className="card">
-                <div className="card-content">
-                    <h4 className="title">One Piece</h4>
-                    <p className="synopsis">A special edited version which looks back on the episodes 1089-1122 that were broadcast from January to October 2024.</p>
+            <div className="card" style={{ '--bg-image': `url(${imageLink})` }}>                <div className="card-content">
+                    <h4 className="title">{title}</h4>
+                    <p className="synopsis">{synopsis}</p>
                 </div>
           </div>
         </>
