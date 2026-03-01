@@ -32,13 +32,13 @@ header{
   gap: 50px;
 }
 
-.new, .top, .random{ 
+.popular, .recent, .random{ 
   padding: 10px 20px; ;
   text-decoration: none;
   color: var(--text-color);
 }
 
-.new:hover, .top:hover, .random:hover{
+.popular:hover, .recent:hover, .random:hover{
   color: var(--sub-color);
 }
 
@@ -99,6 +99,8 @@ section{
   flex-wrap: nowrap; 
   overflow-x: hidden; 
   scroll-behavior: smooth; 
+  align-items: center;
+  justify-content: center;
   gap: 20px; 
   padding: 10px 0;
 }
@@ -127,10 +129,6 @@ section{
 
 .card {
   flex: 0 0 auto; 
-  margin-top: 0;
-}
-
-.card {
   margin-top: 20px;
   height: 324px;
   width: 225px;
@@ -142,6 +140,7 @@ section{
   justify-content: flex-end;
   flex-direction: column;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .card::before {
@@ -178,4 +177,49 @@ section{
 .card:hover .card-content {
   transform: scale(1.1); 
   transform-origin: left bottom;
+}
+
+.reset-btn{
+  display: flex;
+  align-content: start;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  padding: 5px;
+  background-color: var(--border-color);
+  cursor: pointer;
+}
+
+@keyframes skeleton-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #222 25%, #333 50%, #222 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+.card.is-loading {
+  cursor: default;
+  border: 1px solid #333;
+  background: #1a1a1a;
+}
+
+.skeleton-title {
+  height: 18px;
+  width: 80%;
+  margin-bottom: 10px;
+}
+
+.skeleton-text {
+  height: 12px;
+  width: 100%;
+  margin-bottom: 6px;
+}
+
+.skeleton-text.short {
+  width: 50%;
 }

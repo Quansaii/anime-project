@@ -8,9 +8,9 @@ export function Header(){
                     <Link to='/'><img src="https://www.amediateka.ru/static/images/logos/amediateka.svg" alt="" /></Link>
                 </div>
                 <div className="navigation">
-                    <Link to='/new' className="new">New</Link>
-                    <Link to='/top' className="top">Top</Link>
-                    <Link to='/random' className="random">Random</Link>
+                    <a href="#popular" className="popular">Popular</a>
+                    <a href="#recent" className="recent">Recent</a>
+                    <a href="#random" className="random">Random</a>
                 </div>
             </header>
         </>

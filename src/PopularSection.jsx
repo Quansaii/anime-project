@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { PopularCard } from "./PopularCard"
 import { useHorizontalScroll } from "./assets/Scroll"
 import { truncateText } from "./assets/TruncateText";
+import { Link } from "react-router";
 
 export function PopularSection() {
     const { scrollRef, scrollLeft, scrollRight } = useHorizontalScroll(300);
@@ -31,10 +32,8 @@ export function PopularSection() {
         getPopularAnime();
     },[])
 
-    console.log(popularAnime)
-
     return (
-        <section className="popular">
+        <section className="popular-section" id="popular">
             <h2>Popular</h2>
             <div className="slider-wrapper">
                 <button className="nav-btn prev" onClick={scrollLeft}>&#10094;</button>
