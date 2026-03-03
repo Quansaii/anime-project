@@ -1,9 +1,13 @@
 import { Link } from "react-router"
 
-export function PopularCard({imageLink, title, synopsis}){
+export function PopularCard({id, imageLink, title, synopsis}){
     return(
         <>
-            <Link to='/detailes' className="card" style={{ '--bg-image': `url(${imageLink})` }}>                <div className="card-content">
+            <Link to='/details' 
+            className="card" 
+            style={{ '--bg-image': `url(${imageLink})` }} 
+            state={id}>                
+                <div className="card-content">
                     <h4 className="title">{title}</h4>
                     <p className="synopsis">{synopsis}</p>
                 </div>

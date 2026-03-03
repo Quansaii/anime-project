@@ -60,6 +60,7 @@ export function RandomSection() {
                     randomAnime && (
                         <RandomCard
                             key={randomAnime.mal_id}
+                            id={randomAnime.mal_id}
                             title={randomAnime.title_english || randomAnime.title}
                             imageLink={randomAnime.images?.jpg?.image_url}
                             synopsis={truncateText(randomAnime.synopsis || '', 40)}

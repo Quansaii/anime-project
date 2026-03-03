@@ -42,6 +42,7 @@ export function PopularSection() {
                     {popularAnime?.map(anime => 
                         <PopularCard
                             key={anime?.mal_id}
+                            id={anime?.mal_id}
                             imageLink={anime?.images?.jpg?.image_url}
                             title={anime?.title_english}
                             synopsis={truncateText(anime?.synopsis, 40)}

@@ -41,6 +41,7 @@ export function RecentSection(){
                         anime?.region_locked === false && (
                             <RecentCard
                             key={anime?.entry?.mal_id}
+                            id={anime?.entry?.mal_id}
                             imageLink={anime?.entry?.images?.jpg?.image_url}
                             title={anime?.entry?.title}
                             episode={anime?.episodes[0]?.title}

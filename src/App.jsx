@@ -5,7 +5,7 @@ import { PopularSection } from './PopularSection'
 import { RecentSection } from './RecentSection'
 import { RandomSection } from './RandomSection'
 import { Route, Routes } from 'react-router'
-import { DetailesPage } from './DetailesPage'
+import { DetailsPage } from './detailsPage'
 import './App.css'
 
 function App() {
@@ -21,9 +21,9 @@ function App() {
           <RecentSection/>
           <RandomSection/>
         </>}/>
-      <Route path="/detailes" element={
+      <Route path="/details" element={
         <>
-          <DetailesPage/>
+          <DetailsPage/>
         </>}/>
     </Routes>
     </>

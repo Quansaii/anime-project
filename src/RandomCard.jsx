@@ -1,9 +1,13 @@
 import { Link } from "react-router";
 
-export function RandomCard({imageLink, title, synopsis}){
+export function RandomCard({id, imageLink, title, synopsis}){
     return(
         <>
-            <Link to='/detailes' className="card" style={{ '--bg-image': `url(${imageLink})` }}>
+            <Link to='/details' 
+            className="card" 
+            style={{ '--bg-image': `url(${imageLink})` }}
+            state={id}
+            >
                 <div className="card-content">
                     <h4 className="title">{title}</h4>
                     <p className="synopsis">{synopsis}</p>
