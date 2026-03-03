@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router";
 export function Header(){
     return (
         <>
-            <header>
+            <header className="home-page-header">
                 <div className="logo">
                     <Link to='/'><img src="https://www.amediateka.ru/static/images/logos/amediateka.svg" alt="" /></Link>
                 </div>
