@@ -17,6 +17,30 @@
 
 body{
   background: var(--background-color);
+  position: relative;
+  min-height: 100vh;
+  margin: 0;
+  transition: background 0.3s ease;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.8); 
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 50;
+}
+
+body:has(.search-section:focus-within) {
+    overflow: hidden; 
+}
+
+body:has(.search-section:focus-within)::before {
+    opacity: 1;
 }
 
 .home-page-header{
@@ -47,6 +71,49 @@ body{
     justify-content: space-between;
     width: 390px;
     margin: 20px auto 0;
+    position: relative; 
+    transition: z-index 0.3s;
+}
+
+.search-section:focus-within {
+    z-index: 100; 
+}
+
+.search{
+  width: 0;
+  height: 0;
+  overflow: visible;
+}
+
+.recommended{
+  display: flex;
+  flex-direction: column;
+  width: 390px;
+  margin: 10px auto 0;
+}
+
+.recommended li{
+  background-color:var(--background-color);
+  list-style-type: none;
+  padding: 10px 20px;
+}
+
+.recommended li>a{
+  text-decoration: none;
+}
+
+.recommended a{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.recommended a>img{
+  width: 30px;
+}
+
+.recommended a>span{
+  color: var(--text-color);
 }
 
 input {
@@ -57,12 +124,12 @@ input {
     color: white;
     width: 300px;
     outline: none;
-    transition: var(--transition);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 input:focus {
     border-color: var(--sub-color);
-    box-shadow: 0 0 10px rgba(114, 236, 28, 0.2);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
 }
 
 .btn-search {
@@ -74,6 +141,7 @@ input:focus {
     font-weight: 700;
     cursor: pointer;
     transition: var(--transition);
+    height: 43px;
 }
 
 .btn-search:hover {
