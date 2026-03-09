@@ -1,7 +1,7 @@
-import { RandomCard } from "./RandomCard";
 import { useHorizontalScroll } from "./assets/Scroll";
 import { useEffect, useState } from "react";
 import { truncateText } from "./assets/TruncateText";
+import { CustomCard } from "./Components/Card";
 
 
 function RandomCardSkeleton() {
@@ -58,12 +58,12 @@ export function RandomSection() {
                     <div className="error-message">Error loading data</div>
                 ) : (
                     randomAnime && (
-                        <RandomCard
-                            key={randomAnime.mal_id}
-                            id={randomAnime.mal_id}
-                            title={randomAnime.title_english || randomAnime.title}
-                            imageLink={randomAnime.images?.jpg?.image_url}
-                            synopsis={truncateText(randomAnime.synopsis || '', 40)}
+                        <CustomCard 
+                            key={randomAnime?.mal_id}
+                            id={randomAnime?.mal_id}
+                            imageLink={randomAnime?.images?.jpg?.image_url}
+                            title={randomAnime?.title_english}
+                            synopsis={truncateText(randomAnime?.synopsis, 40)}
                         />
                     )
                 )}

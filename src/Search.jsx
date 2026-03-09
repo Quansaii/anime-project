@@ -46,7 +46,6 @@ export function SearchContainer(){
   }
   ,[query])
 
-  console.log(recommendedAnime)
 
     return(
         <>

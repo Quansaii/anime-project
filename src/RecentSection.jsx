@@ -1,7 +1,7 @@
-import { RecentCard } from "./RecentCard";
 import { useEffect, useState } from "react";
 
 import { useHorizontalScroll } from "./assets/Scroll"
+import { CustomCard } from "./Components/Card";
 
 export function RecentSection(){
 
@@ -39,7 +39,7 @@ export function RecentSection(){
                 <div className="recent-container" ref={scrollRef}>
                     {recentAnime?.map(anime => (
                         anime?.region_locked === false && (
-                            <RecentCard
+                            <CustomCard
                             key={anime?.entry?.mal_id}
                             id={anime?.entry?.mal_id}
                             imageLink={anime?.entry?.images?.jpg?.image_url}
